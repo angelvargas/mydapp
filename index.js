@@ -1,8 +1,8 @@
 const Web3 = require('web3');
 
-let USER = "u0mjgm2y4w";
-let PASS = "Djdo9n5iCIMY1s3AbvN77MFXbDn800idndJmvpSSwVI";
-let RPC_ENDPOINT = "u0t1wfxa79-u0i4zhl18v-rpc.us0-aws.kaleido.io"; // Remove the leading https://
+let USER = "";
+let PASS = "";
+let RPC_ENDPOINT = ""; // Remove the leading https://
 
 // HTTP Provider Example
 // NOTE: The HTTP Provider is deprecated, as it won't work for subscriptions.
