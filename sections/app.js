@@ -64,7 +64,7 @@ app.get('/', function(req, res) {
  * Obtener numero de bloque
 */
 app.get('/block', function(req, res) {
-    //console.log(req.query);
+    console.log(req.query);
     res.status(200).json({
         message: 'Hello Block'
     });
