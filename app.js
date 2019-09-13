@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const birds = require('./birds');
 //const Web3 = require("web3");
 //var Accounts = require("web3-eth-accounts");
 
@@ -50,12 +51,41 @@ const app = express();
 //     // Stop the program once this has finished
 //     process.exit();
 // });
-// */
-// /*
-// */
-app.use((req, res, next)=>{
+
+/**
+ * Index
+ */
+app.get('/', function(req, res) {
     res.status(200).json({
-        message: 'Hello World'
-    })
+        message: 'Hello Yucatan'
+    });
 });
+/**
+ * Obtener numero de bloque
+*/
+app.get('/block', function(req, res) {
+    //console.log(req.query);
+    res.status(200).json({
+        message: 'Hello Block'
+    });
+});
+/**
+ * Crear una nueva cuenta
+ */
+app.get('/newaccount', function(req, res) {
+    //console.log(req.query);
+    res.status(200).json({
+        message: 'Hello Acount'
+    });
+});
+/**
+ * Desbloquear cuenta
+ */
+app.get('/unlockaccount', function(req, res) {
+    //console.log(req.query);
+    res.status(200).json({
+        message: 'Hello Unlock'
+    });
+});
+app.use('/birds', birds);
 module.exports = app;
