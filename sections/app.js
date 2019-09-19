@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 const birds = require('./birds');
-//const Web3 = require("web3");
-//var Accounts = require("web3-eth-accounts");
+const Web3 = require("web3");
+const Accounts = require("web3-eth-accounts");
 
+const _user = "";
+const _pass = "";
+const _rpc_endpoint = "";
+let nodeUrl = "https://" + _user + ":" + _pass + "@" + _rpc_endpoint;
 // //
 // let USER = "";
 // let PASS = "";
