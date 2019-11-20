@@ -4,10 +4,14 @@ const birds = require('./birds');
 const Web3 = require("web3");
 const Accounts = require("web3-eth-accounts");
 
-const _user = "";
-const _pass = "";
-const _rpc_endpoint = "";
+const _user = "angel ";
+const _pass = "1234";
+const _rpc_endpoint = "192.168.50.226:22000";
 let nodeUrl = "https://" + _user + ":" + _pass + "@" + _rpc_endpoint;
+
+const web3 = new Web3(
+    new Web3.providers.HttpProvider("http://192.168.50.226:22000")
+);
 // //
 // let USER = "";
 // let PASS = "";
@@ -59,15 +63,19 @@ let nodeUrl = "https://" + _user + ":" + _pass + "@" + _rpc_endpoint;
 /**
  * Index
  */
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
+    //const account = web3.eth.accounts[0];
+    // let provider = new Web3.providers.HttpProvider(nodeUrl);
+    // let web3 = new Web3(provider);
+    let lastest = JSON.stringify(web3.eth.getBlock("latest"));
     res.status(200).json({
-        message: 'Hello Yucatan'
+        message: lastest
     });
 });
 /**
  * Obtener numero de bloque
 */
-app.get('/block', function(req, res) {
+app.get('/block', function (req, res) {
     console.log(req.query);
     res.status(200).json({
         message: 'Hello Block'
@@ -76,7 +84,7 @@ app.get('/block', function(req, res) {
 /**
  * Crear una nueva cuenta
  */
-app.get('/newaccount', function(req, res) {
+app.get('/newaccount', function (req, res) {
     //console.log(req.query);
     res.status(200).json({
         message: 'Hello Acount'
@@ -85,7 +93,7 @@ app.get('/newaccount', function(req, res) {
 /**
  * Desbloquear cuenta
  */
-app.get('/unlockaccount', function(req, res) {
+app.get('/unlockaccount', function (req, res) {
     //console.log(req.query);
     res.status(200).json({
         message: 'Hello Unlock'
